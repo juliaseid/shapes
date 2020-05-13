@@ -13,12 +13,12 @@ namespace Shapes.Models
 
     public double GetArea()
     {
-      return Math.Pow(Radius, 2) * Math.PI ;
+      return Math.Round(Math.Pow(Radius, 2) * Math.PI, 2, MidpointRounding.AwayFromZero) ;
     }
 
     public double GetCircumference()
     {
-      return Radius * 2 * Math.PI;
+      return Math.Round(Radius * 2 * Math.PI, 2, MidpointRounding.AwayFromZero);
     }
     
 

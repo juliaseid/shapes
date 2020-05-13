@@ -17,7 +17,7 @@ namespace Shapes.Tests
       // Act
       double result = newCircle.GetArea();
       // Assert
-      Assert.AreEqual(result, 16 * Math.PI);
+      Assert.AreEqual(result, 50.27);
     }
 
     [TestMethod]
@@ -25,7 +25,7 @@ namespace Shapes.Tests
     {
       Circle newCircle = new Circle(4);
       double result = newCircle.GetCircumference();
-      Assert.AreEqual(result, 8 * Math.PI);
+      Assert.AreEqual(result, 25.13);
     }
 
   }

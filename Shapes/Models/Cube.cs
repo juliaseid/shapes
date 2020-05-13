@@ -1,3 +1,5 @@
+using System;
+
 namespace Shapes.Models
 {
   public class Cube
@@ -9,16 +11,16 @@ namespace Shapes.Models
       Face = side;
     }
 
-    public int GetVolume()
+    public double GetVolume()
     {
-      int length = Face.Length;
-      return length * length * length;
+      double length = Face.Length;
+      return Math.Round(length * length * length, 2, MidpointRounding.AwayFromZero);
     }
 
-    public int GetSurfaceArea()
+    public double GetSurfaceArea()
     {
-      int length = Face.Length;
-      return (length * length) * 6;
+      double length = Face.Length;
+      return Math.Round((length * length) * 6, 2, MidpointRounding.AwayFromZero);
     }
 
   }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shapes.Models;
 
@@ -17,7 +18,6 @@ namespace Shapes.Tests
       Assert.AreEqual(result, 4);
       Assert.AreEqual(result2, 3);
       Assert.AreEqual(result3, Math.Sqrt((3+4+5)*(-3+4+5)*(3-4+5)*(3+4-5))*0.5 / 5);
-
     }
 
     [TestMethod]
@@ -28,5 +28,19 @@ namespace Shapes.Tests
       Console.WriteLine(newTriangle.GetArea());
       Assert.AreEqual(result, (3*4*.5));
     }
+
+    [TestMethod]
+    public void Triangle_GetAngles_AnglesOfTriangle()
+    {
+      Triangle newTriangle = new Triangle(3, 4, 5);
+      List<double> testList = newTriangle.GetAngles();
+      foreach (double angle in testList)
+      {
+        Console.WriteLine(angle);  
+      }
+      List<double> result = new List<double> {90, 36.87, 53.13};
+      CollectionAssert.AreEqual(testList, result);
+    }
+
   }
 }

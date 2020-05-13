@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Shapes.Models
 {
@@ -27,9 +28,16 @@ namespace Shapes.Models
       return 0.25 * Math.Sqrt((SideA + SideB + SideC) * (SideB + SideC - SideA) * (SideA - SideB + SideC) * (SideA + SideB - SideC));
     }
 
-    public double GetAngle(double sideOne, double sideTwo, double sideThree)
+    public List<double> GetAngles()
     {
-      return 0;
+      List<double> angleList = new List<double> {};
+      double angleAB = (Math.Acos((Math.Pow(SideA, 2) + Math.Pow(SideB, 2) - Math.Pow(SideC, 2)) / (2 * SideA * SideB))) * 180 / Math.PI;
+      angleList.Add(Math.Round(angleAB, 2, MidpointRounding.AwayFromZero));
+      double angleBC = (Math.Acos((Math.Pow(SideB, 2) + Math.Pow(SideC, 2) - Math.Pow(SideA, 2)) / (2 * SideB * SideC))) * 180 / Math.PI;
+      angleList.Add(Math.Round(angleBC, 2, MidpointRounding.AwayFromZero));
+      double angleAC = (Math.Acos((Math.Pow(SideA, 2) + Math.Pow(SideC, 2) - Math.Pow(SideB, 2)) / (2 * SideA * SideC))) * 180 / Math.PI;
+      angleList.Add(Math.Round(angleAC, 2, MidpointRounding.AwayFromZero));
+      return angleList;
     }
 
   }

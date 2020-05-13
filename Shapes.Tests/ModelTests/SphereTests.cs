@@ -15,7 +15,7 @@ namespace Shapes.Tests
       Circle newCircle = new Circle(4);
       Sphere newSphere = new Sphere(newCircle);
       double result = newSphere.GetVolume();
-      Assert.AreEqual(result, (Math.Pow(4, 3) * Math.PI * 4/3));
+      Assert.AreEqual(result, 268.08);
     }
 
     [TestMethod]
@@ -24,7 +24,7 @@ namespace Shapes.Tests
       Circle newCircle = new Circle(4);
       Sphere newSphere = new Sphere(newCircle);
       double result = newSphere.GetSurfaceArea();
-      Assert.AreEqual(result, (Math.Pow(4, 2) * Math.PI * 4));
+      Assert.AreEqual(result, 201.06);
     }
 
 

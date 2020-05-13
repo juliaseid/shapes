@@ -1,19 +1,21 @@
+using System;
+
 namespace Shapes.Models
 {
   public class Rectangle
   {
-    public int Length { get; set; }
-    public int Width { get; set; }
+    public double Length { get; set; }
+    public double Width { get; set; }
 
-    public Rectangle(int sideLength, int sideWidth)
+    public Rectangle(double sideLength, double sideWidth)
     {
       Length = sideLength;
       Width = sideWidth;
     }
 
-    public int GetArea()
+    public double GetArea()
     {
-      return Length * Width;
+      return Math.Round(Length * Width, 2, MidpointRounding.AwayFromZero);
     }
 
     public bool IsSquare()

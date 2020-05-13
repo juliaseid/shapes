@@ -13,7 +13,7 @@ namespace Shapes.Tests
       // Arrange
       Rectangle newRectangle = new Rectangle(4, 4);
       // Act
-      int result = newRectangle.GetArea();
+      double result = newRectangle.GetArea();
       // Assert
       Assert.AreEqual(result, 16);
     }
